@@ -1,0 +1,44 @@
+{
+    "name": "locky42/telegram-logger",
+    "description": "A PSR-4 compatible service for logging messages to Telegram",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["telegram", "logger", "logging", "psr-4"],
+    "authors": [
+        {
+            "name": "locky42",
+            "email": "locky42@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Locky42\\TelegramLogger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Locky42\\TelegramLogger\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-unit": "phpunit --testsuite=\"Unit Tests\"",
+        "test-component": "phpunit --testsuite=\"Component Tests\"",
+        "test-integration": "phpunit --testsuite=\"Integration Tests\"",
+        "test-http": "phpunit --testsuite=\"HTTP Tests\"",
+        "test-functional": "phpunit --testsuite=\"Functional Tests\"",
+        "test-coverage": "phpunit --coverage-html=coverage/html",
+        "test-coverage-text": "phpunit --coverage-text"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         verbose="true"
+         stopOnFailure="false"
+         processIsolation="false"
+         backupGlobals="false">
+    <testsuites>
+        <testsuite name="Unit Tests">
+            <file>./tests/TelegramConfigTest.php</file>
+            <file>./tests/MessageFormatterTest.php</file>
+            <file>./tests/TelegramLoggerExceptionTest.php</file>
+            <file>./tests/LoggerInterfaceTest.php</file>
+            <file>./tests/LoggerFactoryTest.php</file>
+        </testsuite>
+        <testsuite name="Component Tests">
+            <file>./tests/TelegramLoggerTest.php</file>
+            <file>./tests/AsyncTelegramLoggerTest.php</file>
+        </testsuite>
+        <testsuite name="Integration Tests">
+            <directory>./tests/Integration</directory>
+        </testsuite>
+        <testsuite name="HTTP Tests">
+            <directory>./tests/Http</directory>
+        </testsuite>
+        <testsuite name="Functional Tests">
+            <directory>./tests/Functional</directory>
+        </testsuite>
+        <testsuite name="All Tests">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+        <exclude>
+            <directory>./src/Exceptions</directory>
+        </exclude>
+    </coverage>
+</phpunit>
