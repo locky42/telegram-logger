@@ -3,7 +3,6 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Locky42\TelegramLogger\TelegramLogger;
-use Locky42\TelegramLogger\Config\TelegramConfig;
 
 // Basic usage
 $botToken = 'YOUR_BOT_TOKEN';

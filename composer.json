@@ -6,10 +6,12 @@
     "keywords": ["telegram", "logger", "logging", "psr-4"],
     "authors": [
         {
-            "name": "locky42",
-            "email": "locky42@example.com"
+            "name": "Максим Зінченко",
+            "email": "zinchenko.m.42@gmail.com",
+            "homepage": "https://github.com/locky42"
         }
     ],
+    "homepage": "https://github.com/locky42/telegram-logger",
     "require": {
         "php": ">=7.4",
         "ext-curl": "*",
