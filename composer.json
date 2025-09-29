@@ -14,7 +14,6 @@
     "homepage": "https://github.com/locky42/telegram-logger",
     "require": {
         "php": ">=7.4",
-        "ext-curl": "*",
         "ext-json": "*"
     },
     "require-dev": {
