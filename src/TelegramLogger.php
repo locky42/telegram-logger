@@ -18,8 +18,9 @@ class TelegramLogger implements LoggerInterface
     /**
      * @param string|TelegramConfig $chatIdOrConfig
      * @param string|null $botToken
+     * @param int|null $threadId
      */
-    public function __construct($chatIdOrConfig, ?string $botToken = null, ?int $threadId = null)
+    public function __construct($chatIdOrConfig, string|null $botToken = null, int|null $threadId = null)
     {
         if ($chatIdOrConfig instanceof TelegramConfig) {
             $this->config = $chatIdOrConfig;
