@@ -5,11 +5,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Locky42\TelegramLogger\TelegramLogger;
 
 // Basic usage
-$botToken = 'YOUR_BOT_TOKEN';
+$botToken = '8256677096:AAGaIGto_l9fuARk6LUDcUodb0ks6iZkZD8';
 $chatId = 'YOUR_CHAT_ID';
+$threadId = 5;
 
 // Simple way
-$logger = new TelegramLogger($chatId, $botToken);
+$logger = new TelegramLogger($chatId, $botToken, $threadId);
 
 try {
     // Different log levels

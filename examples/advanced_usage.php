@@ -10,7 +10,8 @@ $config = new TelegramConfig([
     'bot_token' => 'YOUR_BOT_TOKEN',
     'chat_id' => 'YOUR_CHAT_ID',
     'parse_mode' => 'HTML',
-    'timeout' => 60
+    'timeout' => 60,
+    'thread_id' => 5 // optional: message thread ID
 ]);
 
 $logger = new TelegramLogger($config);

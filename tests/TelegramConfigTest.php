@@ -18,6 +18,7 @@ class TelegramConfigTest extends TestCase
         $this->assertEquals('test_chat_id', $config->getChatId());
         $this->assertEquals('HTML', $config->getParseMode());
         $this->assertEquals(30, $config->getTimeout());
+        $this->assertNull($config->getThreadId());
     }
 
     public function testChatIdValidation()
@@ -57,5 +58,8 @@ class TelegramConfigTest extends TestCase
 
         $config->setTimeout(60);
         $this->assertEquals(60, $config->getTimeout());
+
+        $config->setThreadId(123456789);
+        $this->assertEquals(123456789, $config->getThreadId());
     }
 }

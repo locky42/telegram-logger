@@ -11,6 +11,7 @@ class TelegramConfig
     private string $chatId;
     private string $parseMode;
     private int $timeout;
+    private ?int $threadId;
 
     /**
      * @param array $config
@@ -21,6 +22,7 @@ class TelegramConfig
         $this->chatId = $config['chat_id'] ?? '';
         $this->parseMode = $config['parse_mode'] ?? 'HTML';
         $this->timeout = $config['timeout'] ?? 30;
+        $this->threadId = $config['thread_id'] ?? null;
 
         $this->validate();
     }
@@ -107,5 +109,21 @@ class TelegramConfig
             throw new \InvalidArgumentException('Timeout must be positive integer');
         }
         $this->timeout = $timeout;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getThreadId(): ?int
+    {
+        return $this->threadId;
+    }
+
+    /**
+     * Set a new thread ID
+     */
+    public function setThreadId(?int $threadId): void
+    {
+        $this->threadId = $threadId;
     }
 }

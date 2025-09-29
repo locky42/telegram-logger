@@ -19,14 +19,15 @@ class TelegramLogger implements LoggerInterface
      * @param string|TelegramConfig $chatIdOrConfig
      * @param string|null $botToken
      */
-    public function __construct($chatIdOrConfig, ?string $botToken = null)
+    public function __construct($chatIdOrConfig, ?string $botToken = null, ?int $threadId = null)
     {
         if ($chatIdOrConfig instanceof TelegramConfig) {
             $this->config = $chatIdOrConfig;
         } else {
             $this->config = new TelegramConfig([
                 'chat_id' => $chatIdOrConfig,
-                'bot_token' => $botToken
+                'bot_token' => $botToken,
+                'thread_id' => $threadId
             ]);
         }
 
@@ -110,6 +111,10 @@ class TelegramLogger implements LoggerInterface
             'text' => $message,
             'parse_mode' => $this->config->getParseMode()
         ];
+
+        if ($this->config->getThreadId() !== null) {
+            $data['message_thread_id'] = $this->config->getThreadId();
+        }
 
         $ch = curl_init();
         curl_setopt_array($ch, [

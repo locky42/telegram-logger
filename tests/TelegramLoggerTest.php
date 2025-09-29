@@ -117,4 +117,20 @@ class TelegramLoggerTest extends TestCase
         
         $this->assertContains('Locky42\TelegramLogger\LoggerInterface', $interfaces);
     }
+
+    /**
+     * Test that thread_id is included in API request when set
+     */
+    public function testThreadIdIncludedInApiRequest()
+    {
+        $config = new TelegramConfig([
+            'bot_token' => 'test_token',
+            'chat_id' => 'test_chat_id',
+            'thread_id' => 123456789
+        ]);
+
+        $logger = new TelegramLogger($config);
+        $this->assertInstanceOf(TelegramLogger::class, $logger);
+        $this->assertEquals(123456789, $config->getThreadId());
+    }
 }

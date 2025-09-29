@@ -43,7 +43,8 @@ $config = new TelegramConfig([
     'bot_token' => 'YOUR_BOT_TOKEN',
     'chat_id' => 'YOUR_CHAT_ID',
     'parse_mode' => 'HTML', // or 'Markdown'
-    'timeout' => 30
+    'timeout' => 30,
+    'thread_id' => 123456789 // optional: message thread ID for group discussions
 ]);
 
 $logger = new TelegramLogger($config);
@@ -81,6 +82,16 @@ You can use this bot for quick tests or demos. For production and privacy, it is
 2. Send any message to the chat
 3. Go to: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
 4. Find `chat.id` in the response
+
+## Getting Thread ID
+
+For group discussions with threads:
+
+1. Enable topics in your group (Group Settings > Topics)
+2. Create a new topic/thread in the group
+3. Send a message in that thread
+4. Go to: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
+5. Find `message_thread_id` in the response
 
 ## License
 
