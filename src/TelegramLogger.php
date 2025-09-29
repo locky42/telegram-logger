@@ -16,17 +16,17 @@ class TelegramLogger implements LoggerInterface
     private string $apiUrl;
 
     /**
-     * @param string|TelegramConfig $botTokenOrConfig
-     * @param string|null $chatId
+     * @param string|TelegramConfig $chatIdOrConfig
+     * @param string|null $botToken
      */
-    public function __construct($botTokenOrConfig, ?string $chatId = null)
+    public function __construct($chatIdOrConfig, ?string $botToken = null)
     {
-        if ($botTokenOrConfig instanceof TelegramConfig) {
-            $this->config = $botTokenOrConfig;
+        if ($chatIdOrConfig instanceof TelegramConfig) {
+            $this->config = $chatIdOrConfig;
         } else {
             $this->config = new TelegramConfig([
-                'bot_token' => $botTokenOrConfig,
-                'chat_id' => $chatId
+                'chat_id' => $chatIdOrConfig,
+                'bot_token' => $botToken
             ]);
         }
 

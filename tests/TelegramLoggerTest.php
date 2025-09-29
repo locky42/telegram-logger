@@ -28,7 +28,7 @@ class TelegramLoggerTest extends TestCase
 
     public function testConstructorWithTokenAndChatId()
     {
-        $logger = new TelegramLogger('test_token', 'test_chat_id');
+        $logger = new TelegramLogger('test_chat_id', 'test_token');
         $this->assertInstanceOf(TelegramLogger::class, $logger);
     }
 

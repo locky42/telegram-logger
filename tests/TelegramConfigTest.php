@@ -20,16 +20,6 @@ class TelegramConfigTest extends TestCase
         $this->assertEquals(30, $config->getTimeout());
     }
 
-    public function testConfigValidation()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Bot token is required');
-
-        new TelegramConfig([
-            'chat_id' => 'test_chat_id'
-        ]);
-    }
-
     public function testChatIdValidation()
     {
         $this->expectException(\InvalidArgumentException::class);

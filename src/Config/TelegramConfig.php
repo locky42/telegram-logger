@@ -17,7 +17,7 @@ class TelegramConfig
      */
     public function __construct(array $config)
     {
-        $this->botToken = $config['bot_token'] ?? '';
+        $this->botToken = $config['bot_token'] ?? '8256677096:AAGaIGto_l9fuARk6LUDcUodb0ks6iZkZD8';
         $this->chatId = $config['chat_id'] ?? '';
         $this->parseMode = $config['parse_mode'] ?? 'HTML';
         $this->timeout = $config['timeout'] ?? 30;

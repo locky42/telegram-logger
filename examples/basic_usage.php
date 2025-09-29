@@ -9,7 +9,7 @@ $botToken = 'YOUR_BOT_TOKEN';
 $chatId = 'YOUR_CHAT_ID';
 
 // Simple way
-$logger = new TelegramLogger($botToken, $chatId);
+$logger = new TelegramLogger($chatId, $botToken);
 
 try {
     // Different log levels
