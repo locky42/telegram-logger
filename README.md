@@ -17,9 +17,7 @@ composer require locky42/telegram-logger
 
 use Locky42\TelegramLogger\TelegramLogger;
 
-// Initialize the logger (default bot token is used if not provided)
-$logger = new TelegramLogger('YOUR_CHAT_ID');
-// or
+// Initialize the logger
 $logger = new TelegramLogger('YOUR_CHAT_ID', 'YOUR_BOT_TOKEN');
 
 // Send a message
@@ -49,8 +47,6 @@ $config = new TelegramConfig([
 
 $logger = new TelegramLogger($config);
 
-// You can omit 'bot_token' to use the default public bot:
-// 'bot_token' => '8256677096:AAGaIGto_l9fuARk6LUDcUodb0ks6iZkZD8',
 ```
 
 ## Getting Bot Token
@@ -60,21 +56,7 @@ $logger = new TelegramLogger($config);
 3. Give your bot a name
 4. Get the bot token
 
-### Default Bot Token
 
-If you do not provide your own bot token, the default public bot will be used:
-
-```
-8256677096:AAGaIGto_l9fuARk6LUDcUodb0ks6iZkZD8
-```
-
-You can use this for quick tests or demos, but for production use, create your own bot for privacy and security.
-
-### Default Bot
-
-By default, the package uses the public bot [@tg_multilogger_bot](https://t.me/tg_multilogger_bot).
-
-You can use this bot for quick tests or demos. For production and privacy, it is recommended to create your own bot via [@BotFather](https://t.me/botfather).
 
 ## Getting Chat ID
 
@@ -92,6 +74,12 @@ For group discussions with threads:
 3. Send a message in that thread
 4. Go to: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
 5. Find `message_thread_id` in the response
+
+## Testing
+
+```bash
+composer test
+```
 
 ## License
 

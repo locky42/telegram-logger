@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Locky42\TelegramLogger\TelegramLogger;
 
 // Basic usage
-$botToken = '8256677096:AAGaIGto_l9fuARk6LUDcUodb0ks6iZkZD8';
+$botToken = 'YOUR_BOT_TOKEN';
 $chatId = 'YOUR_CHAT_ID';
 $threadId = 5;
 

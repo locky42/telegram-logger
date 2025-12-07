@@ -1,7 +1,7 @@
 {
     "name": "locky42/telegram-logger",
     "description": "A PSR-4 compatible logger for sending messages to Telegram via Bot API.",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "keywords": ["telegram", "logger", "logging", "psr-4", "bot", "php"],
